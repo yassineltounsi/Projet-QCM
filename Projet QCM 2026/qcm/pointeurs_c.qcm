@@ -1,0 +1,51 @@
+QCM_V1
+pointeurs_c
+Programmation C
+1 1 0
+4
+1.00
+Quelles affirmations sont vraies a propos des pointeurs ?
+5
+Un pointeur contient une adresse memoire
+1
+L'operateur * permet d'acceder a la valeur pointee
+1
+Un pointeur ne peut jamais valoir NULL
+0
+L'operateur & permet d'obtenir l'adresse d'une variable
+1
+Un pointeur remplace toujours un tableau
+0
+1.00
+Pourquoi verifier qu'un pointeur n'est pas NULL ?
+4
+Pour eviter un acces memoire dangereux
+1
+Pour rendre le programme plus lent
+0
+Pour convertir un int en char
+0
+Pour afficher un accent
+0
+1.00
+Quelles fonctions sont liees a l'allocation dynamique ?
+4
+malloc
+1
+free
+1
+printf
+0
+scanf
+0
+1.00
+Que doit-on faire quand une zone allouee avec malloc n'est plus utile ?
+4
+La liberer avec free
+1
+La laisser pour toujours
+0
+La renommer
+0
+La sauvegarder obligatoirement dans un fichier
+0

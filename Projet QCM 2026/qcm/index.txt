@@ -1,3 +1,0 @@
-structures_c
-pointeurs_c
-complexite_tris

@@ -1,0 +1,48 @@
+Ce projet est une application sur console écrite en langage C qui permet de concevoir, de stocker et de passer des Questionnaires à Choix Multiples. Le programme est structuré de manière propre et modulaire, ce qui sépare la logique des données de l'affichage sur l'écran.
+
+
+Fonctionnalités de l'application : 
+L'application s'articule autour de deux grands profils d'utilisateurs :
+
+Le mode Enseignant : Ce mode demande un mot de passe pour être ouvert. Une fois connecté, le professeur peut créer un nouveau questionnaire de toutes pièces. Il configure d'abord les règles du jeu : le titre du QCM, si les questions acceptent une ou plusieurs bonnes réponses, si l'étudiant a le droit de passer des questions ou s'il doit obligatoirement suivre l'ordre, le nombre de questions et le barème. Ensuite, il saisit chaque énoncé avec ses choix (jusqu'à 6 options) et indique les bonnes réponses. Le programme enregistre alors automatiquement ce QCM dans un sous-dossier et inscrit son nom dans un fichier d'index.
+
+Le mode Étudiant : Ce mode est libre d'accès. Le programme va lire la liste des QCM disponibles et l'affiche à l'écran. L'étudiant choisit son questionnaire et répond aux questions une par une. Si le professeur a activé le mode libre, l'étudiant peut choisir de sauter une question pour y revenir plus tard. À la fin, le programme calcule immédiatement la note selon le barème de l'enseignant et affiche une correction détaillée avec les réponses données et les réponses attendues.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
+Explication et rôle des fichiers du projet :
+Le code est découpé en plusieurs fichiers qui ont chacun un rôle précis :
+
+Le fichier main.c : C'est le point de départ du programme. Il est très court car il se contente d'appeler la fonction générale de démarrage qui se trouve dans l'interface.
+
+Le fichier qcm.h : C'est le fichier de configuration des données. Il contient les structures de données ainsi que les limites maximales de texte pour éviter que le programme ne plante.
+
+Le fichier qcm.c : C'est le cerveau des données. Il ne gère aucun affichage à l'écran mais s'occupe de la mémoire et des fichiers. C'est lui qui crée le dossier de sauvegarde, écrit les QCM sur le disque dur, ouvre les fichiers pour les lire et met à jour la liste des QCM disponibles.
+
+Le fichier interface.h : Il sert de pont et déclare la fonction principale pour lancer l'interface utilisateur.
+
+Le fichier interface.c : C'est le moteur visuel et interactif. Il gère tous les affichages, les menus textuels, la vérification du mot de passe et le déroulement des questions. Il intègre aussi des fonctions de saisie sécurisées pour éviter les bugs si l'utilisateur tape un texte trop long ou un mauvais caractère.
+
+Le fichier Makefile.txt : C'est le fichier de configuration pour l'outil de compilation. Il explique à l'ordinateur comment lier tous les fichiers .c entre eux pour fabriquer l'application finale.
+
+
+
+
+
+Guide d'utilisation tape par étape : 
+Étape 1 : Ouvrir le Makefile.
+Avant de commencer, repérez le fichier Makefile.txt dans le dossier de votre projet. Pour plus de simplicité avec les outils de programmation, vous pouvez le renommer simplement "Makefile" (sans extension .txt), mais le laisser tel quel fonctionne aussi avec la bonne commande.
+
+Étape 2 : Entrer la commande de compilation.
+Ouvrez votre terminal de commandes dans le dossier où se trouvent tous vos fichiers et tapez la commande suivante pour compiler le projet :
+make -f Makefile.txt
+Cette action va compiler chaque fichier séparément et créer un fichier exécutable final nommé qcm_app.
+
+Étape 3 : Lancer l'application.
+Pour démarrer le programme, tapez simplement la commande suivante dans votre terminal :
+./qcm_app
+
+Étape 4 : Le mode Professeur.
+Dans le menu principal, tapez le chiffre 1 pour aller dans le mode enseignant. Le système vous demande un mot de passe, tapez : CYTECH2026. Choisissez l'option pour créer un QCM et laissez-vous guider par les instructions pour configurer les règles, saisir vos questions et valider. Le fichier est alors créé et sauvegardé tout seul. Vous pouvez ensuite revenir au menu principal.
+
+Étape 5 : Le mode Étudiant.
+Dans le menu principal, tapez le chiffre 2. L'écran affiche la liste de tous les QCM créés par les professeurs. Tapez le numéro du QCM que vous voulez passer. Répondez aux questions à l'aide des chiffres. À la fin du questionnaire, regardez votre bilan détaillé et votre note s'afficher à l'écran.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

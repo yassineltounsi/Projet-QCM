@@ -1,0 +1,29 @@
+Présentation de l'équipe et du sujet :
+Notre équipe est composée de trois étudiants en Pré-Ingénieur 1 : Yassine, Diego et Fatih. Dans le cadre de notre cursus à CY Tech, nous avons développé une application console de gestion de QCM en langage C. L'objectif était de créer un système complet permettant à un enseignant de concevoir des évaluations avec des paramètres spécifiques (mode séquentiel, choix multiples, barèmes) et à un étudiant de passer ces tests avec un calcul automatique et sécurisé de sa note.
+
+
+
+Organisation du groupe : 
+
+La conduite de ce projet informatique s'est articulée autour de deux phases de travail bien distinctes.
+La phase de mise en place et de cadrage :
+Au début du projet, notre dynamique de groupe s'est d'abord concentrée sur la réflexion théorique et la conception de l'architecture. Nous avons fourni un cahier des charges très complet, mettant à plat les structures de données globales et la maquette des futurs menus de l'interface. Bien que nous disposions déjà d'une base de code initiale et de structures conceptuelles prêtes, notre progression globale a ralenti pendant les deux premières semaines. Lors du point d'étape avec notre enseignante, le constat a été clair : le document de cadrage était très solide, mais il fallait désormais accélérer concrètement la production et l'intégration du code pour respecter les exigences du calendrier.
+
+La phase de développement et d'intégration :
+Suite à ce bilan, nous avons immédiatement réorganisé notre flux de travail pour entrer dans une phase de programmation intensive. Nous nous sommes appuyés sur les bases théoriques déjà établies pour répartir efficacement les tâches en parallèle :
+
+Diego a développé l'affichage de l'interface utilisateur et la structure des menus dynamiques (interface.c et interface.h).
+Fatih s'est chargé du code de démarrage (main.c), de l'automatisation de la compilation (Makefile) et de l'assemblage final des différents modules.
+Yassine a pris en charge la logique métier de l'application et le système de persistance des fichiers (qcm.c et qcm.h)
+
+
+
+Problèmes techniques rencontrés : 
+
+L'intensification du rythme de codage en fin de parcours nous a confrontés à des bugs techniques complexes, que nous avons résolus lors de nos phases d'intégration.
+Les sauts de lignes : Lors de la saisie des énoncés, le programme sautait parfois l'étape suivante sans laisser le temps d'écrire, ou enregistrait un retour à la ligne invisible qui décalait les affichages du QCM. La cause,La fonction "fgets" conserve le caractère de retour à la ligne (\n) en fin de saisie, ce qui faussait le stockage dans les fichiers textes et l'index. On a donc développé et intégré une fonction de nettoyage de chaîne (enleverFinDeLigne) qui repère le "\n" et le remplace par un caractère de fin de chaîne "\0", ce qui a stabilisé le traitement des textes avant leur sauvegarde.
+
+
+Résultats et Conclusion : 
+
+Au terme de ce projet, notre application "qcm_app" est totalement fonctionnelle et respecte scrupuleusement le cahier des charges original. Ce travail de groupe nous a apporté deux enseignements majeurs. Sur le plan technique, il nous a confrontés à la rigueur absolue qu'impose le langage C concernant la manipulation des fichiers et la gestion de la mémoire. Sur le plan humain, il nous a montré l'importance d'un bon équilibre de projet : si un démarrage théorique solide est indispensable, le passage rapide à la phase active de programmation est la clé pour s'assurer une fin de projet sereine et maîtrisée.
